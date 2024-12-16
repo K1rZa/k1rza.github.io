@@ -12,6 +12,11 @@ $accent-color:rgb(220, 0, 0);
   font-size: font_size_settings($min_font, $coef);
   color: $text_color;
 }
+@mixin flex_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 *{
   padding: 0;
@@ -21,11 +26,9 @@ $accent-color:rgb(220, 0, 0);
   font-weight: 200;
 }
 main {
-  display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
+  @include flex_center();
   background-image: url(./assets/reg_fon.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,30 +46,24 @@ a{
   }
 }
 .reg-form-main{
-  display: flex;
   flex-direction: column;
   width: 30%;
   min-width: 400px;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
+  @include flex_center();
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); 
   background-color: $background-color-1;
   backdrop-filter: blur(10px);
 }
 .reg-form-name, .reg-form-email, .reg-form-password, .reg-form-info{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex_center();
   flex-direction: column;
   width: 100%;
   height: 5%;
   margin-top: 1vh;
 }
 .reg-form-button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex_center();
   flex-direction: column;
   width: 100%;
   height: 8.5%;

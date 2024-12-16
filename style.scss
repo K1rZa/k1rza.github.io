@@ -13,7 +13,6 @@ $accent-color:rgb(220, 0, 0);
   font-size: font_size_settings($min_font, $coef);
   color: $text_color;
 }
-
 @mixin input_button_adjustable($el_width, $el_height, $el_color, $bg_el_color, $el_font_size){
     background-color: $el_color;
     width: $el_width;
@@ -26,6 +25,11 @@ $accent-color:rgb(220, 0, 0);
       background-color: $bg_el_color;
       color: $text-color-1;
     } 
+}
+@mixin flex_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 *{
@@ -64,11 +68,9 @@ ul{
 }
 
 body{
-  display: flex;
+  @include flex_center();
   width: 100%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: $background-color-1;
 }
 
@@ -94,10 +96,8 @@ header{
   background-color: $background-color-2;
 }
 .header-nav-button{
-  display: flex;
+  @include flex_center();
   width: 25%;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   position: relative;
   svg{
@@ -117,10 +117,9 @@ header{
 }
 
 main{
-  display: flex;
+  @include flex_center();
   flex-direction: column;
   width: 80%;
-  align-items: center;
   gap: 5vh;
   position: relative;
   @media screen and (max-width: 700px) {
@@ -162,18 +161,14 @@ main{
 .main{
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex_center();
   flex-direction: column;
   @media screen and (max-width: 700px) {
     align-items: center;
   }
 }
 #home-greetings{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex_center();
   margin-top: 5%;
   text-align: center;
 }
@@ -276,10 +271,8 @@ main{
 .home-mods-part-text{
   width: 60%;
   min-width: 350px;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex_center();
   overflow: hidden;
   background-color: $background-color-3;
   &:hover, &:active, &:focus{
@@ -337,8 +330,7 @@ main{
   }
 }
 .info-text-contacts{
-  display: flex;
-  align-items: center;
+  @include flex_center();
   justify-content: space-around;
   flex-direction: column;
   width: 40%;
@@ -390,9 +382,7 @@ main{
   }
 }
 .news-buttons{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex_center();
   height: auto;
   input{
     @include input_button_adjustable(100%, 100%, $accent-color, $background-color-3, 0.9em);
@@ -411,10 +401,8 @@ footer{
   margin-top: 10%;
   width: 100%;
   padding: 0.5% 0;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex_center();
   background-color: $background-color-2;
 }
 #footer-logo{

@@ -47,10 +47,10 @@ ul {
 
 body {
   display: flex;
-  width: 100%;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  flex-direction: column;
   background-color: rgb(23, 23, 23);
 }
 
@@ -80,9 +80,9 @@ header {
 
 .header-nav-button {
   display: flex;
-  width: 25%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 25%;
   overflow: hidden;
   position: relative;
 }
@@ -101,9 +101,10 @@ header {
 
 main {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 80%;
-  align-items: center;
   gap: 5vh;
   position: relative;
 }
@@ -151,8 +152,8 @@ main {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 @media screen and (max-width: 700px) {
@@ -163,8 +164,8 @@ main {
 
 #home-greetings {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 5%;
   text-align: center;
 }
@@ -282,8 +283,8 @@ main {
 .home-mods-part-text {
   width: 60%;
   min-width: 350px;
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -364,6 +365,7 @@ main {
 .info-text-contacts {
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: space-around;
   flex-direction: column;
   width: 40%;
@@ -456,10 +458,10 @@ footer {
   margin-top: 10%;
   width: 100%;
   padding: 0.5% 0;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
   background-color: rgb(68, 68, 68);
 }
 
