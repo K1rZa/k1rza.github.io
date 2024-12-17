@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $text-color-1:white;
 $text-color-2:rgb(180, 180, 180);
 $background-color-1:rgb(23, 23, 23);
@@ -5,10 +7,22 @@ $background-color-2:rgb(68, 68, 68);
 $background-color-3:rgb(30, 30, 30);
 $accent-color:rgb(220, 0, 0);
 
+$bg_array_color: ("bg1": rgb(23, 23, 23), "bg2": rgb(68, 68, 68), "bg3": rgb(30, 30, 30), "ac": rgb(220, 0, 0));
+
 @function font_size_settings($min_font, $coef){
   @return calc($min_font + $coef);
 }
+@function select_bg_color($bg_color_index){
+  @each $bg_name_color, $bg_color in $bg_array_color{
+    @if $bg_name_color == $bg_color_index{
+      @return $bg_color;
+    }
+  }
+}
 
+@mixin set_bg_color($bg_color_index){
+  background-color: select_bg_color($bg_color_index);
+}
 @mixin text_adjustable($min_font, $coef, $text_color){
   font-size: font_size_settings($min_font, $coef);
   color: $text_color;
@@ -71,7 +85,7 @@ body{
   @include flex_center();
   width: 100%;
   flex-direction: column;
-  background-color: $background-color-1;
+  @include set_bg_color("bg1")
 }
 
 header{
@@ -93,7 +107,7 @@ header{
   flex-direction: row;
   justify-content: space-around;
   height: 6%;
-  background-color: $background-color-2;
+  @include set_bg_color("bg2");
 }
 .header-nav-button{
   @include flex_center();
@@ -135,7 +149,7 @@ main{
   min-width: 300px;
   aspect-ratio: 1 / 1;
   background-image: linear-gradient(-35deg, $background-color-1 30%, rgba(255, 255, 255, 0)), url(./assets/image.png);
-  background-color: $accent-color;
+  @include set_bg_color("ac");
   z-index: -1;
   overflow: hidden;
   clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
@@ -149,7 +163,7 @@ main{
   min-width: 300px;
   aspect-ratio: 1 / 1;
   background-image: linear-gradient(135deg, $background-color-1 30%, rgba(255, 255, 255, 0)), url(./assets/image.png);
-  background-color: $accent-color;
+  @include set_bg_color("ac");
   z-index: -1;
   width: 30%;
   overflow: hidden;
@@ -184,7 +198,6 @@ main{
 }
 .home-gallery-main{
   width: 100%;
-  background-color: aliceblue;
   margin-top: 0.4%;
   transition: transform 0.5s ease-in-out;
 }
@@ -274,9 +287,9 @@ main{
   flex-direction: column;
   @include flex_center();
   overflow: hidden;
-  background-color: $background-color-3;
+  @include set_bg_color("bg3");
   &:hover, &:active, &:focus{
-    background-color: $background-color-2;
+    @include set_bg_color("bg2");
     p{
       color: $text-color-1;
     }
@@ -354,7 +367,7 @@ main{
   display: flex;
   flex-direction: row;
   margin-top: 1%;
-  background-color: $background-color-3;
+  @include set_bg_color("bg3");
   gap: 0.5%;
 }
 .news-part-text{
@@ -403,7 +416,7 @@ footer{
   padding: 0.5% 0;
   flex-direction: column;
   @include flex_center();
-  background-color: $background-color-2;
+  @include set_bg_color("bg2");
 }
 #footer-logo{
   filter: drop-shadow(0 0 15px $background-color-1);
