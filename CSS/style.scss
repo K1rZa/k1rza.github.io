@@ -156,16 +156,13 @@ main{
   height: auto;
   @include flex_center();
   flex-direction: column;
-  @media screen and (max-width: 700px) {
-    align-items: center;
-  }
 }
 #home-greetings{
   @include flex_center();
   margin-top: 5%;
   text-align: center;
 }
-#home-gallery{
+#home-gallery, #home-mods{
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -204,15 +201,6 @@ main{
     width: 90%;
   }
 }
-#home-mods{
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media screen and (max-width: 700px) {
-    width: 90%;
-  }
-}
 .home-mods-main{
   width: 100%;
   height: auto;
@@ -220,7 +208,6 @@ main{
   flex-direction: column;
   justify-content: space-around;
   margin-top: 2.5%;
-
 }
 .home-mods-part{
   width: 100%;
@@ -350,6 +337,10 @@ main{
   align-items: center;
   img{
     width: 100%;
+    &:hover, &:active, &:focus{
+      mask: url(../assets/dc3dc0fba5a1476c8e0cd10c83b66247-free-Photoroom.png) luminance center no-repeat;
+      mask-size: 70%;
+    }
   }
   @media screen and (max-width: 1440px) {
     display: none;
