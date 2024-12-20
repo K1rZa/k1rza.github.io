@@ -29,13 +29,7 @@ p {
   color: rgb(180, 180, 180);
 }
 
-span {
-  font-size: calc(0.8em + 0.2vw);
-  color: white;
-}
-
-a {
-  text-decoration: none;
+span, a {
   font-size: calc(0.8em + 0.2vw);
   color: white;
 }
@@ -189,13 +183,7 @@ main {
      object-fit: fill;
   transition: transform 0.8s ease;
 }
-.swiper-slide img:hover {
-  transform: scale(1.1);
-}
-.swiper-slide img:active {
-  transform: scale(1.1);
-}
-.swiper-slide img:focus {
+.swiper-slide img:hover, .swiper-slide img:active, .swiper-slide img:focus {
   transform: scale(1.1);
 }
 
@@ -241,17 +229,7 @@ main {
   flex-wrap: wrap;
   margin-top: 1%;
 }
-.home-mods-part:hover {
-  transform: scale(1.01);
-  border-top: 1px solid rgb(220, 0, 0);
-  border-bottom: 1px solid rgb(220, 0, 0);
-}
-.home-mods-part:active {
-  transform: scale(1.01);
-  border-top: 1px solid rgb(220, 0, 0);
-  border-bottom: 1px solid rgb(220, 0, 0);
-}
-.home-mods-part:focus {
+.home-mods-part:hover, .home-mods-part:active, .home-mods-part:focus {
   transform: scale(1.01);
   border-top: 1px solid rgb(220, 0, 0);
   border-bottom: 1px solid rgb(220, 0, 0);
