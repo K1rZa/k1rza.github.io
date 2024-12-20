@@ -91,7 +91,7 @@ header{
 }
 #header-img-main{
   height: 95%;
-  background-image: linear-gradient(to top, $background-color-2 0.25%, rgba(255, 255, 255, 0)), url(./assets/header_fon.jpg);
+  background-image: linear-gradient(to top, $background-color-2 0.25%, rgba(255, 255, 255, 0)), url(../assets/header_fon.jpg);
   background-repeat: no-repeat;
   background-position: 0 80%;
   background-size: cover;
@@ -142,7 +142,7 @@ main{
   width: 30%;
   min-width: 300px;
   aspect-ratio: 1 / 1;
-  background-image: linear-gradient(-35deg, $background-color-1 30%, rgba(255, 255, 255, 0)), url(./assets/image.png);
+  background-image: linear-gradient(-35deg, $background-color-1 30%, rgba(255, 255, 255, 0)), url(../assets/image.png);
   @include set_bg_color("ac");
   z-index: -1;
   overflow: hidden;
